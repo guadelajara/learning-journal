@@ -1,0 +1,177 @@
+
+/*
+Requirements
+
+- Build each page from scratch
+- Make all pages responsive
+    - Relative units 
+    - Mobile-first design 
+    - Media queries
+    - Viewport meta tag
+
+Stretch goals
+
+- Display other recent posts after clicking "view more"
+- Responsive navigation displaying a "hamburger menu" on smaller screemns
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    gap: 1em 0;
+    grid-template-areas: 
+        ". . ."
+        ". sh ."
+        "bh bh bh"
+        ". ma ."
+        ". . ."
+        ". mo ."
+        ". . ."
+        "fo fo fo"
+    ;
+}
+
+.logo {
+    width: 10%;
+    height: 30%;
+    margin: 2em 0.3125em;
+}
+
+img {
+    width: 100%;
+
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.4em 0.625em 0.4em;
+    grid-area: sh;
+}
+
+.header-text {
+    padding: 25em 5em;
+    font-size: 0.7rem;
+}
+
+.left-side-header {
+    display: flex;
+    font-size: 0.4rem;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.right-side-header {
+    display: flex;
+    font-size: 0.7rem;
+    gap: 1em;
+}
+
+.big-header {
+    background-image: url("images/main-image.png");
+    background-size: cover;
+    height: 30em;
+    color: #fff;
+    grid-area: bh;
+    margin-bottom: 3em;
+}
+
+main {
+    text-align: center;
+    grid-area: ma;
+    display: grid;
+    font-size: 1rem;
+    gap: 4em 0;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "one"
+        "two"
+        "thr"
+        "fou"
+        "fiv"
+        "six"
+    ;
+}
+
+a {
+    text-decoration: none;
+    color: #141414;
+    text-align: start;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.more {
+    grid-area: mo;
+    text-align: center;
+}
+
+footer {
+    grid-area: fo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #202020;
+    color: #fff;
+    padding: 3em 10em;
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+
+
+.blog-one {
+    grid-area: one;
+}
+
+.blog-two {
+    grid-area: two;
+}
+
+.blog-three {
+    grid-area: thr;    
+}
+
+.blog-four {
+    grid-area: fou;
+}
+
+.blog-five {
+    grid-area: fiv;
+}
+
+.blog-six {
+    grid-area: six;
+}
+
+@media(min-width: 700px) {
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "one two"
+            "thr fou"
+            "fiv six"
+        ;
+        gap: 5em 2em;
+    }
+
+}
+
+@media(min-width: 1200px) {
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "one two thr"
+            "fou fiv six"
+        ;
+        gap: 5em 2em;
+    }
+}
